@@ -1,0 +1,38 @@
+body {
+    /*font-family: cursive;*/
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+footer {
+    margin-top: auto;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #1e2528;
+    padding: 1rem;
+}
+
+footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+form {
+    width: 40%;
+    margin: auto;
+}
+
+.col-center {
+    text-align: center;
+}
+
+.ol-wrap {
+    list-style-type: none;
+}
+
+.table-thead-dark {
+    background-color: #32383e;
+    color: #FFFFFF;
+}
