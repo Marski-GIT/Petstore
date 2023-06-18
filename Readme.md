@@ -20,6 +20,12 @@ https://petstore.swagger.io/
 
 Nie skupiamy sie na estetyce interfejsu - kwestie frontendowe nie są oceniane. Ma działać backend, tylko tyle wystarczy.
 
-# PAGE
+# Strona
 
 https://petstore.marski.pl/
+
+## Technologie
+
+- PHP 8.2
+    - OOP
+    - MVC
