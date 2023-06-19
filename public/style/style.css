@@ -36,3 +36,7 @@ form {
     background-color: #32383e;
     color: #FFFFFF;
 }
+
+.container.margin-top {
+    margin-top: 10rem;
+}

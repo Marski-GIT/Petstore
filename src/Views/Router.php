@@ -24,11 +24,19 @@ final class Router
         $this->compile();
     }
 
+    /**
+     * @return string
+     * @description Downloading action from url.
+     */
     public function action(): string
     {
         return $this->route['action'] ?? '';
     }
 
+    /**
+     * @return void
+     * @description Breaking a friendly url into parameters.
+     */
     private function compile(): void
     {
         $this->url = trim(str_replace(getenv('SITE_URL'), '', $this->url));
@@ -63,6 +71,11 @@ final class Router
         }
     }
 
+    /**
+     * @param mixed $value
+     * @return float|int|string
+     * @description Parameter projection from url.
+     */
     private function castNumber(mixed $value): float|int|string
     {
         if (is_numeric($value)) {

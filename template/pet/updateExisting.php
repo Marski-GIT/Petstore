@@ -66,14 +66,9 @@ $errors = $viewValues['errors'];
             <div class="form-group mt-2">
                 <label for="pet_status">Status</label>
                 <select class="form-control" name="pet_status" id="pet_status">
-                    <option <?= ($request['pet_status'] ?? '') === 'available' ? 'selected' : '' ?> value="available">
-                        Available
-                    </option>
-                    <option <?= ($request['pet_status'] ?? '') === 'pending' ? 'selected' : '' ?> value="pending">
-                        Pending
-                    </option>
-                    <option <?= ($request['pet_status'] ?? '') === 'sold' ? 'selected' : '' ?> value="sold">Sold
-                    </option>
+                    <option <?= ($request['pet_status'] ?? '') === 'available' ? 'selected' : '' ?> value="available">Available</option>
+                    <option <?= ($request['pet_status'] ?? '') === 'pending' ? 'selected' : '' ?> value="pending">Pending</option>
+                    <option <?= ($request['pet_status'] ?? '') === 'sold' ? 'selected' : '' ?> value="sold">Sold</option>
                 </select>
                 <small class="form-text text-muted">Pet status.</small>
             </div>

@@ -6,8 +6,10 @@ namespace Marski\Sessions;
 
 final class AppSession
 {
-    private static int $count;
-
+    /**
+     * @return void
+     * @description Check if the session exists or run run.
+     */
     public static function run(): void
     {
         if (!self::isSessionStarted()) {
@@ -16,27 +18,31 @@ final class AppSession
         }
     }
 
+    /**
+     * @param string $key
+     * @return mixed
+     * @description Get an item from the session table.
+     */
     public static function get(string $key): mixed
     {
         return $_SESSION[$key];
     }
 
-    public static function set($key, mixed $params = ''): object|bool
+    /**
+     * @param $key
+     * @param mixed $params
+     * @return void
+     * @description Adding an item to the session.
+     */
+    public static function set($key, mixed $params = ''): void
     {
-        self::$count = count($_SESSION);
-
-        if (is_object($_SESSION[$key])) {
-            return $_SESSION[$key];
-        }
-
         $_SESSION[$key] = $params;
-
-        if (count($_SESSION) > self::$count) {
-            return true;
-        }
-        return false;
     }
 
+    /**
+     * @return void
+     * @description Completion of default keys.
+     */
     private static function bind(): void
     {
         $params = self::getDefaultParams();
@@ -48,6 +54,10 @@ final class AppSession
         }
     }
 
+    /**
+     * @return bool
+     * @description Whether the session is already running.
+     */
     private static function isSessionStarted(): bool
     {
         if (php_sapi_name() !== 'cli') {
@@ -60,6 +70,10 @@ final class AppSession
         return false;
     }
 
+    /**
+     * @return null[]
+     * @description Array of default session keys
+     */
     private static function getDefaultParams(): array
     {
         return [

@@ -15,11 +15,14 @@ final readonly class Request
         $this->post = $_POST;
     }
 
-    public function action(): string
-    {
-        return $this->get['action'] ?? getenv('DEFAULT_ACTION');
-    }
-
+    /**
+     * @param string|array $param
+     * @return mixed
+     * @description Retrieving POST data.
+     *  - Without parameters, the whole array.
+     *  - String as key
+     *  - Key board
+     */
     public function post(string|array $param = []): mixed
     {
         $tempPost = $this->preparePost($this->post);
@@ -39,11 +42,20 @@ final readonly class Request
         return array_key_exists($param, $tempPost) ? $tempPost[$param] : null;
     }
 
+    /**
+     * @return array
+     * @description File from the form.
+     */
     public function files(): array
     {
         return $_FILES;
     }
 
+    /**
+     * @param string $methodName
+     * @return bool
+     * @description Whether the request method was used.
+     */
     public function isMethod(string $methodName): bool
     {
         if ($_SERVER['REQUEST_METHOD'] === $methodName) {
@@ -52,6 +64,11 @@ final readonly class Request
         return false;
     }
 
+    /**
+     * @param array $request
+     * @return array
+     * @description Remove whitespace and last comma.
+     */
     private function preparePost(array $request): array
     {
         $post = [];

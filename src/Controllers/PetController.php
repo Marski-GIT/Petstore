@@ -56,6 +56,17 @@ final class PetController extends AbstractController
     /**
      * @return void
      * @throws AppException
+     * @description Welcome page.
+     */
+    private function mainPets(): void
+    {
+        $this->view->renderHTML('main', 'pet/');
+    }
+
+
+    /**
+     * @return void
+     * @throws AppException
      * @description Add a new pet to the store.
      */
     private function addNew(): void
@@ -137,7 +148,6 @@ final class PetController extends AbstractController
 
                 $this->message = $result['message'];
                 $list = $result['list'];
-                $this->postTemp = [];
             }
         } catch (RequestException) {
             $this->message['danger'][] = 'Form submission error.';
@@ -145,7 +155,7 @@ final class PetController extends AbstractController
             $this->view->renderHTML('findsPetsStatus', 'pet/', [
                     'message' => $this->message,
                     'list'    => $list,
-                    'request' => $this->postTemp,
+                    'request' => $this->post,
                 ]
             );
         }

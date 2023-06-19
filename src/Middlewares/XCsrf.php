@@ -36,7 +36,7 @@ final class XCsrf
             }
             throw  new RequestException();
         }
-        throw  new RequestException();
+        return true;
     }
 
     public static function setNewToken(string $name, int $time = 86400): void

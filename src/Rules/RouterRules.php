@@ -37,7 +37,8 @@ final class RouterRules
  * @description Route group.
  */
 RouterRules::set('pet', '<page>', [
-    'add-new-pets'                => ['', 'addNew'],
+    'main-pets'                   => ['', 'mainPets'],
+    'add-new-pets'                => ['add-new-pets', 'addNew'],
     'update-existing-pet'         => ['update-existing-pet', 'updateExisting'],
     'finds-pets-by-status'        => ['finds-pets-by-status', 'findsPetsStatus'],
     'find-pet-by-id'              => ['find-pet-by-id', 'findPetID'],
