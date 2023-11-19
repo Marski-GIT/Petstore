@@ -1,12 +1,4 @@
-# Zadanie rekrutacyjne Grupa Esprzedaż
-
-## Opis zadania
-
-REST API (w php) technologia dowolna
-
-Napisz aplikację komunikującą się z przykładowym REST API.
-
-## REST API
+# Petstore REST API
 
 https://petstore.swagger.io/
 
